@@ -1,0 +1,299 @@
+/* layout using css grid */
+
+/*
+un layout es la manera en que se disponen los elementos en una pagina web
+
+esquema de la distribucion de los elementos dentro de una pagina web
+
+se compone de una serie de bloques de ciertas dimensiones en los que se colocara el contenido
+
+css grid layout es un metodo de diseño en css, creado para diseños de 2 
+dimensiones(filas y columnas) de items en una pagina web o aplicacion
+
+grid layout es usado para crear estructuras de rejilla que son descriptas en el css y no en el html. Eso nos ayuda a crear diseños que pueden ser redefinidos usando media queries y adaptar a diferentes contextos
+
+flexbox trabaja en una dimension
+css grid trabaja en 2 dimensiones
+
+4 filas
+5 columnas
+
+6 lineas verticales
+5 lineas horizontales
+
+la linea borde externa se llama outer line
+la linea de los bordes internos se llama inner line
+
+la inner line se conoce como gaps
+los gaps es el espacio interno que hay entre las filas y las columnas
+los gaps no afectan al outer line
+
+--container--
+display: grid;
+grid-template-columns: 1fr 1fr; (2 columnas de una fraccion, fr es fraction)
+grid-template-rows: 100px 100px; (2 filas de 100px)
+
+css grid fraction
+fr es una nueva unidad de medida basada en el espacio libre
+se puede confundir con el porcentaje pero funcionan muy diferente
+
+--children--
+grid-column: span 3; (va a expandirse 3 columnas)
+grid-row: 1/2;
+
+grid-row: (start)/(end)
+
+grid-row-start: 1;
+grid-row-end: 3;
+
+grid-column-start: 1;
+grid-column-end: 3;
+
+primer ejercicio
+grid de 3x3
+celdas de 200px cuadrados
+gap de 10px
+
+*/
+
+/* 
+.grid-container {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px;
+    gap: 10px 10px; 
+}*/
+
+/* .element-1 {
+    background-color: lightblue; */
+    /* grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2; */
+
+    /* grid-row: 1/2;
+    grid-column: 1/2; */
+
+    /* grid-column: span 1;
+
+} */
+
+/* .element-2 {
+    background-color: lightblue; */
+    /* grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 4; */
+
+    /* grid-column: 3/4;
+    grid-row: 3/4;
+} */
+
+/*
+content positioning
+
+como posicionar el contenido adentro:
+-el total del ancho y alto del contenedor (total width & height)
+-la celda con content-size o total width & height
+
+--contenedor--
+align-items: start;
+justify-items: center;
+
+*/
+
+/* .grid-container{
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: repeat(3, 10%);
+    gap: 10px 10px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.element-1{
+    background-color: lightblue;
+    justify-self: center;
+    align-self: center;
+
+}
+.element-2{
+    background-color: lightblue;
+
+}
+.element-3{
+    background-color: lightblue;
+
+}
+.element-4{
+    background-color: lightblue;
+
+}
+.element-5{
+    background-color: lightblue;
+} */
+
+/*
+template areas
+*/
+/* .grid-container{
+    display: grid;
+    height: 100vh;
+    gap: 10px 10px;
+    grid-template-areas: 
+        "x y y y y"
+        "x center center center w"
+        "x center center center w"
+        "x z z z z";
+}
+
+.element-1{
+    background-color: lightblue;
+    grid-area: x;
+}
+.element-2{
+    background-color: lightcoral;
+    grid-area: y;
+}
+.element-3{
+    background-color: lightgray;
+    grid-area: z;
+}
+.element-4{
+    background-color: lightskyblue;
+    grid-area: w;
+}
+.element-5{
+    background-color: yellow;
+    grid-area: center;
+} */
+
+/* .grid-container{
+    display: grid;
+    height: 100vh;
+    border: black 2px solid;
+    grid-template-areas: 
+        "uno uno uno uno uno tres tres ocho"
+        "dos cuatro cuatro cuatro cuatro cinco cinco ocho"
+        "dos cuatro cuatro cuatro cuatro nueve nueve ocho"
+        "dos seis seis diez diez nueve nueve ocho"
+        "once seis seis diez diez siete siete doce"
+        "once trece trece catorce catorce siete siete doce" */
+
+        /* "uno uno dos dos dos tres tres uno"
+        "uno cuatro cuatro cuatro cuatro cinco cinco uno"
+        "uno cuatro cuatro cuatro cuatro cinco cinco uno"
+        "uno cuatro cuatro cuatro cuatro dos dos uno"
+        "uno cuatro cuatro cuatro cuatro dos dos uno"
+        "uno seis seis dos dos uno uno dos"
+        "tres seis seis uno uno siete siete cuatro"
+        "tres uno uno seis seis siete siete cuatro"; 
+}
+
+.element-1{
+    background-color: white;
+    grid-area: uno;
+    border: black 2px solid;
+}
+.element-2{
+    background-color: white;
+    grid-area: dos;
+    border: black 2px solid;
+}
+.element-3{
+    background-color: yellow;
+    grid-area: tres;
+    border: black 2px solid;
+}
+.element-4{
+    background-color: red;
+    grid-area: cuatro;
+    border: black 2px solid;
+}
+.element-5{
+    background-color: yellow;
+    grid-area: cinco;
+    border: black 2px solid;
+}
+.element-6{
+    background-color: black;
+    grid-area: seis;
+    border: black 2px solid;
+}
+.element-7{
+    background-color: blue;
+    grid-area: siete;
+    border: black 2px solid;
+}
+.element-8{
+    background-color: white;
+    grid-area: ocho;
+    border: black 2px solid;
+}
+.element-9{
+    background-color: white;
+    grid-area: nueve;
+    border: black 2px solid;
+}
+.element-10{
+    background-color: white;
+    grid-area: diez;
+    border: black 2px solid;
+}
+
+.element-11{
+    background-color: yellow;
+    grid-area: once;
+    border: black 2px solid;
+}
+.element-12{
+    background-color: red;
+    grid-area: doce;
+    border: black 2px solid;
+}
+
+.element-13{
+    background-color: white;
+    grid-area: trece;
+    border: black 2px solid;
+}
+.element-14{
+    background-color: black;
+    grid-area: catorce;
+    border: black 2px solid;
+}
+*/
+
+/*
+responsiveness content
+
+grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+*/
+
+.grid-container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.element-1{
+    background-color: lightblue;
+
+}
+.element-2{
+    background-color: lightblue;
+
+}
+.element-3{
+    background-color: lightblue;
+
+}
+.element-4{
+    background-color: lightblue;
+
+}

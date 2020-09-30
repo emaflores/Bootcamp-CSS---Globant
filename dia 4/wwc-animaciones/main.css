@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  align-items: center;
+  align-content: center;
+  display: flex;
+  flex-flow: row wrap;
+  font-family: Arial;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.title {
+  letter-spacing: -1px;
+  margin: 0;
+  padding: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.cards {
+  align-items: center;
+  display: flex;
+  font-family: Arial;
+  justify-content: center;
+}
+
+.card {
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+  margin: 0 20px 20px 0;
+  max-width: 200px;
+  overflow: hidden;
+  outline: none;
+  user-select: none;
+}
+
+.card__content {
+  padding: 20px;
+}
+
+.card__picture {
+  object-fit: cover;
+  max-height: 200px;
+  max-width: 200px;
+  width: 100%;
+}
+
+.card__title {
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+}
+
+.card__description {
+  font-style: normal;
+}
+
+/* Transiciones */
+/* .card {
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover{
+  box-shadow: 0 20px 40px black;
+  transform: scale(1.05) translateY(-10px);
+} */
+
+/* Animaciones */
+@keyframes slidein{
+  0% {
+    transform: translateX(-20px);
+  }
+  50%{
+    transform: translateX(20px);
+  }
+  100%{
+    transform: translateX(-20px);
+  }
+}
+
+.card.animate{
+  animation: slidein 0.5s linear 0.2s infinite alternate;
+  /* animation-name: none; */
+}
+
+/* .card.animate:hover{
+  animation-name: slidein;
+} */
+
+/* para evitar animaciones que puedan ser molestas para el usuario */
+/* mejorar la accesibilidad para todos los usuarios */
+@media (prefers-reduced-motion:reduce){
+  .card.animate{
+    animation: none;
+  }
+}

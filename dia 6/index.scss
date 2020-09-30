@@ -1,0 +1,165 @@
+/* Preprocesadores */
+
+/*
+Un preprocesador CSS es un programa que te permite generar CSS a partir de la syntax única del preprocesador. Existen varios preprocesadores CSS de los cuales escoger, sin embargo la mayoría de preprocesadores CSS añadiran algunas características que no existen en CSS puro, como variable, mixins, selectores anidados, entre otros. Estas características hacen la estructura de CSS más legible y fácil de mantener.
+
+Herramienta util: sassmeister.com
+
+1.Nesting
+SASS permite introducir un elemento dentro de otro tal como hacemos en el código HTML
+
+*/
+
+/* Ejercicio 1 */
+.form {
+    .button {
+        background-color: blue;
+        span {
+            border: 1px solid red;
+        }
+    }
+    .field {
+        opacity: 0.5;
+        p {
+            font-size: 2rem;
+        }
+    }
+}
+
+/* Ejercicio 2 */
+
+div {
+    .contact-form {
+        margin: 1rem;
+    }
+    .login-form {
+        margin: 2rem;
+    }
+    &:hover {
+        background-color: yellow;
+    }
+}
+
+/* Variables */
+
+/* Ejemplo */
+
+$black: #000;
+$border-radius: 0.25rem;
+div {
+    background-color: $black;
+    border-radius: $border-radius;
+}
+
+/* Ejercicio 3 */
+
+$unColorClarito: rgb(0, 255, 255);
+$unColorOscuro: rgb(210, 105, 30);
+$border: 1px solid $unColorOscuro;
+$font-size: 2rem;
+p {
+    color: $color;
+    font-size: $font-p;
+}
+
+section {
+    color: $color;
+    border: $border;
+}
+
+div {
+    font-size: $font-size;
+    border: $border;
+}
+
+span {
+    color: $color;
+}
+
+h2 {
+    font-size: $font-size;
+}
+
+h3 {
+    font-size: $font-size;
+}
+
+/* Extend */
+
+/* Ejemplo */
+
+.message {
+    font-size: 1;
+}
+
+.message-error {
+    @extend .message;
+}
+
+/* Ejercicio 4 */
+
+$rojo: red;
+.comun {
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+p {
+    @extend .comun;
+    color: $rojo;
+    margin: 1rem;
+}
+
+button {
+    @extend .comun;
+    border-color: $rojo;
+    margin: 2rem;
+}
+
+fieldset {
+    @extend .comun;
+    background-color: $rojo;
+    margin: 3rem;
+}
+
+/* Mixins */
+
+@mixin base-styles($margin) {
+    color: red;
+    margin: 1rem;
+    cursor: pointer;
+    margin: $margin;
+}
+
+p {
+    @include base-styles(1rem);
+}
+
+button {
+    @include base-styles(2rem);
+}
+
+fieldset {
+    @include base-styles(3rem);
+}
+
+/* Otros - Funciones en SASS */
+
+div {
+    color: rgb(random(255), random(255), random(255));
+    background-color: lighten(red, 40%);
+}
+
+@function sum($numbers...){
+    $sum: 0;
+    @each $number in $numbers {
+        $sum: $sum + $number;
+    }
+    @return $sum;
+}
+
+.micro {
+    width: sum(50px, 30px, 100px);
+}
+
+/* https://sass-lang.com/documentation */

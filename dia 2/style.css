@@ -1,0 +1,107 @@
+/* posicionamiento y layout */
+
+/* layout es el diseño que le vamos a hacer a la pagina web.
+es el diseño que le damos a una pagina en html simple
+proporcionandole un esquema.
+como/donde se van a ubicar los elementos dentro de nuestra pagina o dentro de nuestra aplicacion
+por ejemplo cuando decimos, va tener un header, un footer, etc eso es un layout
+
+wareframes son los elementos que se utilizan para representar graficamente como sera el layout de la pagina web, es decir es la representacion
+*/
+
+/*
+css posicion property: especifica el tipo de posicionamiento usado por un elemento
+
+normal flow: si el css no cambia el diseño (layout) los elementos se mostraran en flujo normal, osea html normal
+
+css position property
+div es un elemento de bloque que se colocan uno debajo del otro verticalmente en el html
+
+5 valores diferentes de posicion:
+-static
+-relative
+-fixed
+-absolute
+-sticky
+
+position static
+los elementos html son posicionados static por default.
+los elementos posicionados static no son afectados por las propiedades: top, bottom, left and right
+se posicionan de acuerdo al flujo normal de la pagina
+si tenemos una caja mas grande que no entra en el width, simplemente la tira para abajo
+
+position relative
+un elemento con position: relative; es posicionado relativamente a su posicion original (al igual que sus hijos), segun su contenedor (si no tiene es el body)
+establece las propiedades de top, bottom, left y right
+permite acomodar de forma relativa para que se aleje de su posicion original y el resto de los elementos no se ajustan para llenar el espacio que dejo este elemento
+
+position absolute
+un elemento con position: absolute; es posicionado relativamente al mas cercano antecesor posicionado (en vez de ser posicionado relativamente al viewport(ventana del navegador), como si lo hace fixed)
+si no hay un elemento padre, se ubica en la parte superior izq.
+si hay un elemento antecesor se ubica relativamente a él
+
+ejemplo:*/
+
+div.relative{
+    position: relative;
+    width: 400px;
+    height: 200px;
+    border: 3px solid black;
+}
+
+div.absolute{
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 200px;
+    height: 100px;
+    border: 3px solid black;
+}
+
+/*
+
+position fixed
+un elemento con position: fixed; es posicionado relativamente al viewport, lo que significa que siempre se mantiene en el mismo lugar inclusive si la pagina es scrolleada
+
+position sticky
+un elemento con position: sticky; esta posicionado segun la posicion de desplazamiento del usuario. es decir, al principio esta en su posicion original, pero cuando se scrollea se 'pega' al margen superior o inferior dependiendo del caso
+
+overlapping elements: elementos superpuestos(z-index)
+algunas veces los elementos necesitan superponer otros elementos
+para determinar el orden de apilamiento del eje z (dimesion de profundidad, recordar eje tridimensional), el z-index fue creado
+*/
+
+/*
+floated layouts: elementos flotantes de los layouts
+
+position float
+los valores incluyen: left, right, none o inherit aunque los mas comunes son left y right
+
+ejemplo: el contenedor tiene 900px. cada box tiene float: left;
+box 1 (900px) ocupa toda la primera fila. la siguiente caja en aparecer ira abajo
+box 2 (200) box 3 (400) box 4 (300)
+box 5 (200) box 6 (700)
+
+
+the hanging float
+un problema comun con los elementos flotantes es lo que llamamos
+el flotador colgante(hanging), es cuando quedan espacios en blanco porque los recuadros no pueden acomodarse correctamente
+
+en ese caso usamos clearing float
+arreglar los flotadores colgantes requiere que tu limpies el flotante sobre el elemento que se esta colgando. en el video se usa con el box 5, aplicandole clear, que puede ser left, right o both
+
+*/
+
+/*
+Responsive: Mobile and responsive sites
+
+se usan media queries para cambiar el diseño de la pagina web segun el dispositivo donde se este mostrando
+
+ejemplo:*/
+
+@media only screen and (min-width: 768px){
+    p {
+        font-size: 1.2em;
+    }
+}
+

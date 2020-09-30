@@ -1,0 +1,109 @@
+/* Animations */
+
+/*
+la animacion viene a ser una secuencia de imagenes que al mostrarlas de forma consecutiva logran generr un efecto de movimiento creible en nuestro cerebro
+
+12 principios de la animacion
+
+1. Aplastar y estirar: Esto se logra simplemente comprimiendo y estirando el objeto / carácter.
+Después del estiramiento, vuelven a su forma original como gelatina.
+
+2. Anticipación: Este es el principio que le ayuda a decirle a su audiencia que alguna acción se llevará a cabo en un momento.
+
+3. Puesta en escena: Menciona la importancia de dirigir la atención del público hacia los elementos más importantes de la escena. 
+
+4. Acción recta y pose para posar: O bien, dibujar cuadro por cuadro de principio a fin, o bien, dibuja el fotograma inicial, el fotograma final y algunos fotogramas clave intermedios. Luego regresa y completa el resto.
+
+5. Acción de seguimiento y superposición: Siempre que un personaje en una escena tiende a detenerse, no todo lo asociado con el personaje se detiene.
+
+6. Enlentecimiento y desaceleración: Esto también se conoce como efecto de entrada y salida fácil, que se usa principalmente en el diseño de movimiento.
+
+7. Movimiento de arco: Casi todos los elementos, incluidos los humanos, se mueven en caminos circulares en lugar de en líneas rectas.
+
+8. Acción secundaria: Todos los gestos que se agregan para apoyar la acción principal / primaria se denominan acciones secundarias.
+
+9. Timing: Cada escena se puede dividir en múltiples marcos de tiempo y el momento de la llegada del marco es vital para la animación.
+
+10. Exageración: En ocasiones, demasiado realismo puede arruinar la animación general y la escena. Para condimentar las cosas, agregue algunos elementos surrealistas a la escena.
+
+11. Dibujos sólidos: Este principio anima a los animadores a tener en cuenta el hecho de que, si bien las formas pueden presentarse en 2D, deben esforzarse por verse en 3D
+
+12. Atractivo: Los animadores deben esforzarse por crear imágenes que sean interesantes y atractivas para el público.
+
+animaciones y transiciones
+
+la transicion solo puede tener 2 estados
+la animacion puede tener varios estados
+*/
+
+/*
+transiciones: hacen que el paso de un valor a otro sea progresivo
+
+sintaxis:
+transition: opacity 0.2s linear 300ms;
+
+-opacity: propiedad a transicionar. por defecto es all
+-0.2s: duracion de la transicion
+-linear: funcion de tiempo
+-300ms: demora(delay)
+
+recomendaciones:
+no usar transition: all, se pueden llegar a animar cosas innecesarias y consumir mas memoria
+
+solo transicionar transform y opacity ya que estan optimizadas
+
+*/
+
+/*
+animaciones
+las animaciones son como las transiciones, pero con mas estados
+pueden ser pausadas, infinitas, etc
+
+sintaxis keyframes:
+@keyframes slidein {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+es igual a:
+@keyframes slidein {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+sintaxis animation:
+animation: slidein 3s ease-in 1s 2 reverse both paused;
+
+-slidein: nombre de la animacion
+-3s: duracion
+-ease-in: funcion de tiempo
+-1s: delay
+-2: repeticiones
+-reverse: direccion (de 0 a 100 0 de 100 a 0)
+-both: fill mode o modo de llenado
+-paused: estado pausada o corriendo
+
+fill mode:
+-backward: que el primer keyframe sea en mi estado inicial(cuando empieza)
+-forward: que mi ultimo keyframe sea mi estado final(despues q termina)
+-both: que haga los dos anteriores
+
+
+media-query para movimiento
+
+@media (prefers-reduced-motion:reduce){
+    ...
+}
+prefers-reduced-motion: nombre de la media query
+reduce: valor de la media query, por defecto no-preference
+
+
+*/

@@ -1,0 +1,232 @@
+h1 {
+  margin: 0;
+}
+
+.lower {
+  font-family: "Rozha One", serif;
+  position: relative;
+  top: -24px;
+}
+
+.container {
+  margin: 30px;
+  width: 500px;
+  height: 620px;
+  background-image: url("castle.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+}
+
+.image-background {
+  position: absolute;
+  width: 100%;
+  height: 570px;
+  overflow: hidden;
+  background-image: url("malefica.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 50px;
+}
+
+.sku {
+  width: 90px;
+  height: 70px;
+  background-image: url("barras.png");
+  background-size: cover;
+  bottom: 20px;
+  right: 10px;
+  position: absolute;
+}
+
+.logo {
+  font-family: "Times New Roman", Times, sans-serif;
+  position: relative;
+  color: #bd94fe;
+  font-size: 140px;
+  line-height: 110px;
+  letter-spacing: 2px;
+}
+
+.up-left {
+  width: 50%;
+  padding: 0 15px 100px 20px;
+  float: left;
+  box-sizing: border-box;
+  margin-bottom: 14px;
+}
+
+.up-left h2.subtitle {
+  font-family: "Times New Roman", Times, sans-serif;
+  font-style: italic;
+  color: #9acaba;
+  font-size: 40px;
+  position: relative;
+  top: 10px;
+  font-weight: 50px;
+  margin: 0px;
+}
+
+.up-left div.subtitle-2 {
+  color: #bd94fe;
+  font-size: 45px;
+  font-style: italic;
+  text-transform: uppercase;
+  position: relative;
+  top: 0px;
+  line-height: 0.7;
+}
+
+.up-left div.subtitle-2 span {
+  color: #9acaba;
+  font-size: 42px;
+  text-transform: uppercase;
+  font-style: normal;
+  line-height: 0.7;
+}
+
+.low-center {
+  width: 56%;
+  margin: 30px;
+}
+
+.up-right {
+  width: 45%;
+
+  float: right;
+
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  padding: 45px 5px 0px 0px;
+}
+
+.up-left h2 span {
+  color: white;
+  font-size: 45px;
+  font-weight: 100;
+}
+
+.up-left h4 {
+  color: white;
+  font-size: 20px;
+  line-height: 1;
+  margin-top: 16px;
+}
+
+.lower .up-left .block-text.black span {
+  display: block;
+  margin-bottom: 2px;
+  color: #9acaba;
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 15px;
+  position: relative;
+}
+
+.lower .up-left .block-text.black span:first-child {
+  width: 150px;
+  display: inline-block;
+  margin-top: 30px;
+}
+
+.lower .up-left .block-text.black span:nth-child(2) {
+  width: 250px;
+  display: inline-block;
+  margin-top: 10px;
+  top: -14px;
+  left: 0px;
+}
+
+.lower .up-left .block-text.black span:nth-child(3) {
+  width: 250px;
+  bottom: 19px;
+  left: 0px;
+}
+
+.lower .up-left .block-text.black span:nth-child(4) {
+  width: 200px;
+  bottom: 24px;
+}
+
+.number {
+  font-family: "Times New Roman", Times, serif;
+  color: #bd94fe;
+  line-height: 100px;
+  font-size: 130px;
+  position: absolute;
+  left: 14px;
+  bottom: 210px;
+  letter-spacing: -16px;
+}
+
+.low-center .block-text.white span:first-child {
+  position: relative;
+  bottom: 44px;
+  width: 150px;
+  left: -7px;
+}
+
+.low-center .block-text.white span:nth-child(2) {
+  width: 60px;
+  bottom: 50px;
+  left: -7px;
+  position: relative;
+  font-style: italic;
+}
+
+.low-center .block-text.white span:last-child {
+  width: 200px;
+  bottom: 53px;
+  left: -7px;
+  position: relative;
+}
+
+.low-center .block-text.white span {
+  display: block;
+  color: white;
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.low-center h3 {
+  color: white;
+  font-size: 29px;
+  line-height: 1;
+  margin-top: -25px;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.low-center h3 span:last-child {
+  color: #9acaba;
+  font-size: 90px;
+  line-height: 1;
+  position: relative;
+  bottom: 35px;
+  left: 45px;
+}
+
+.up-right h4.block-text.white span {
+  font-size: 20px;
+  line-height: 1;
+  text-align: center;
+  font-weight: 100;
+  display: inline-block;
+  color: white;
+}
+
+.up-right h4.block-text.white span:first-child {
+  text-transform: uppercase;
+  font-size: 17.5px;
+}
+
+.up-right h4.block-text.white:last-of-type span:last-child {
+  text-transform: uppercase;
+  color: #bd94fe;
+  font-style: italic;
+  font-size: 20px;
+}

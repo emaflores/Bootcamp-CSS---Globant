@@ -1,0 +1,153 @@
+/* Flexbox */
+
+/*
+-es un diseño de caja flexible
+-afecta directamente a nuestra propiedad display
+-estructuras de una sola dimension (fila, columna)
+
++ es la habilidad de manejar el alto y el ancho de un elemento respecto de su padre 
+
+
+poner en el contenedor padre display: flex;
+
+conceptos basicos
+
+contenedor(flex container): elemento padre
+eje principal(main axis): horizontal(fila)
+eje transversal(cross axis): perpendicular al eje principal
+item(flex item): hijos flexibles
+
+propiedades del padre(contenedor flex):
+-display: se usa display: flex; inline seria una linea
+-flex-direction
+-flex-wrap
+-flex-flow
+-justify-content
+-align-items
+-align-content
+
+propiedades para los hijos(flex items):
+-order
+-flex-grow
+-flex-shrink
+-flex-basis
+-flex
+-align-self
+
+trabajando:
+*/
+
+.flex-container{
+    background-color: #fce3e3;
+    border: 2px solid #213a7b;
+    margin: 120px 200px;
+    border-radius: 10px;
+    padding: 10px;
+    height: 400px;
+
+    /* Agregamos esto y ya no se vera un div abajo de otro */
+    display: flex;
+
+    /* Propiedades */
+
+    /* por defecto row, tenemos column, column reverse y row-reverse*/
+    /* flex-direction: row; cambia la direccion*/
+    /* flex-direction: column; */
+
+    /* por defecto nowrap, tenemos wrap y wrap-reverse*/
+    /* flex-wrap: nowrap; salto de linea de bloques*/
+    /* flex-wrap: wrap; */
+
+    /*flex-flow: (flex-direction) (flex-wrap)*/
+    /* flex-flow: row wrap; */
+
+    /*justificar el contenido: flex start, flex end, space around, space between, center, space evenly*/
+    /*organiza los espacios de forma horizontal o alinea horizontalmente*/
+    /* justify-content: space-evenly; */
+    /* justify-content: center; */
+
+    /*alinea verticalmente*/
+    /*flex start, flex end, center, stretch, baseline*/
+    /* align-items: baseline; */
+
+    /*cuando hay varias lineas, alinea sus items segun su contenedor*/
+    /*flex start, flex end, center, space around, space between*/
+    /* align-content: center; */
+
+}
+/* para probar align items: baseline*/
+
+/* .flex-container :nth-child(1){
+    font-size: 40px;
+}
+.flex-container :nth-child(2){
+    font-size: 80px;
+}
+.flex-container :nth-child(3){
+    font-size: 120px;
+} */
+
+/*Propiedades del hijo */
+.flex-child{
+    background-color: #e8412e;
+    border: 2px solid #213a7b;
+    color: #fce3e3;
+    border-radius: 10px;
+    width: 100px;
+    margin: 10px;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 30px;
+}
+
+/* para probar propiedades: 
+order: especifica un orden a los hijos, 
+flex-grow: me adapta cada item segun el contenido restante del padre, me lo reacomoda para que no quede espacio disponible 
+flex-shrink: limite a partir del cual no se re ajusta al achicar la ventana
+flex-basis: definir un ancho base a un item
+flex: (flex-grow) (flex-shrink) (flex-basis)
+align self: alinear cada item de la manera que yo quiero*/
+
+.flex-container :nth-child(1){
+    /* order: 1; */
+    /* flex-grow: 1; */
+    /* flex-shrink: 0;  */
+    /* flex-basis: 200px; */
+    align-self: flex-start;
+    background-color: lightsalmon;
+}
+.flex-container :nth-child(2){
+    /* order: 2; */
+    /* flex-grow: 1; */
+    align-self: flex-end;
+    background-color: lightseagreen;
+}
+.flex-container :nth-child(3){
+    /* order: -2; */
+    /* flex-grow: 1; */
+    align-self: center;
+    background-color: lightskyblue;
+}
+.flex-container :nth-child(4){
+    /* order: 4; */
+    /* flex-grow: 1; */
+    align-self: stretch;
+    background-color: magenta;
+}
+
+/*
+Preguntas:
+la propiedad display: flex; se le agrega a la clase de el  contenedor padre
+
+valor por defecto de flex-flow es row nowrap
+
+propiedad alineamos los items a la derecha: justify content: flex-end;
+
+la propiedad order acepta valores negativos
+
+la propiedad flex-basis determina medida minima del item
+
+el orden correcto de los valores para la propiedad flex es grow, shrins y basis
+
+propiedad para invertir la direccion de mi contenido verticalmente: flex-direction column-reverse
+*/

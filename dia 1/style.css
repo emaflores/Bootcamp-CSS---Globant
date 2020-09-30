@@ -1,0 +1,110 @@
+/* selectors and box model */
+
+/* selector y declaracion: propiedad y valor */
+
+.primero {
+    height: 200px;
+    width: 200px;
+    background-color: yellowgreen;
+}
+
+/* rem es el tamaño de fuente de la raiz
+ em es el tamaño de fuente del elemento padre de ese elemento */
+
+.abuelo {
+    font-size: 20px;
+}
+
+.padre {
+    font-size: 16px;
+}
+
+.hijo {
+    font-size: 2em;
+}
+
+img {
+    background-size: 50%;
+}
+
+/*selectores*/
+
+/* tag */
+
+p {
+    font-size: 16px;
+}
+
+/* id*/
+
+#p {
+    background-color: yellowgreen;
+}
+
+/* clase */
+
+.p {
+    background-color: yellow;
+}
+
+/* selectores compuestos */
+
+div, h1 {
+    background-color: violet;
+}
+
+/* descendant selectors */
+
+/* pintar todos los hijos */
+div div p {
+    color: yellow;
+    background-color: slategray;
+}
+
+/* pintar solo el primer hijo */
+div div > p {
+    color: yellow;
+    background-color: black;
+}
+
+/* selector universal - tiene la menor prioridad */
+
+/* * {
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: white;
+} */
+
+div[data-jaja="rojo"]{
+    width: 150px;
+    height: 150px;
+    background-color: red;
+}
+
+/* pseudo clases: aplican estilo dependiendo del estado de un elemento */
+
+.primero:hover{
+    background-color: salmon;
+}
+
+/* pseudo elementos: elementos que no existe pero yo lo creo */
+a::after{
+    content: '😀';
+    color: red;
+}
+a::before{
+    content: '😜';
+    color: red;
+}
+
+/* prioridad de los selectores:
+
+1) inline 
+2) usar id 
+3) usar clases, atributos o pseudo-clases
+4) usar elemento o pseudo-elemento
+5) selector universal
+*/
+
+/* falto de dar box model */
